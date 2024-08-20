@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trdproj.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/62525c58af.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="signup">
+        <div class="signup-box">
+            <img src="images/logo.jpg" alt="">
+            <form action="">
+                <h1>Sign Up</h1>
+                <div class="input-box2">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Username" id="username">
+                </div>
+
+                <div class="input-box2">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Email Id" id="email">
+                </div>
+
+                <div class="input-box2">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="text" placeholder="Password" id="password">
+                </div>
+
+                <div class="remember">
+                    <input type="checkbox" class="checkbox">
+                    <h3>Remember Me</h1>
+                </div>
+
+                <button id="btnn">SignUp</button>
+                <a href="login.html">Have an account?</a>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        function signup(e){
+    e.preventDefault()
+
+    var username = document.getElementById('username').value
+    var email = document.getElementById('email').value
+    var password = document.getElementById('password').value
+    var emailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(username == "" || email == "" || password == "" ) {
+        alert("Please, enter your details."); return
+    } 
+    if(password.length < 8 || !password.match(/[^\w\s]/)) {
+        alert("Password must be longer than 8 characters and must have at least one special character"); return
+    } 
+    if(!email.match(emailFormat)) {
+        alert("Please enter a valid email address"); return
+    } 
+    else {
+        alert("Thank you.")
+    }
+}
+
+document.getElementById("btnn").addEventListener("click", signup);
+        
+    </script>
+</body>
+</html>

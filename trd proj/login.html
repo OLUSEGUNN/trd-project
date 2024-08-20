@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trdproj.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <section class="container">
+        <div class="login">
+            <div class="login-box1">
+                <h1>PUFFZ</h1>
+                
+                <form action="">
+                <div>
+                    <h2 class="input-heading">Email</h2>
+                    <input type="text" id="email">
+                </div>
+
+                <div>
+                    <h2 class="input-heading">Password</h2>
+                    <input type="text" id="pword">
+                </div>
+
+                <div class="pword-btn">
+                    <a href="">Forget Password?</a>
+                    <button id="button">Sign in!</button>
+                </div>
+                </form>
+            </div>
+
+            <div class="login-box2">
+                <img src="images/logo.jpg" alt="">
+                <h1>Welcome Back!</h1>
+                <p>Log in and use the opportunities offered by our portal.</p>
+                <h2>You don't have an account?</h2>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        function validate (event){
+            event.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('pword').value;
+        const charaters = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if( email === "" || password === "" ){
+                alert('Please enter a valid email and password');
+                return;
+            }
+            if(!email.match(charaters)) {
+                alert("Enter a valid email"); return
+            } else{ alert('WELCOME')
+                window.location.href = 'home.html';
+            };
+        };
+
+        document.getElementById('button').addEventListener('click', validate);
+
+    </script>
+</body>
+</html>
